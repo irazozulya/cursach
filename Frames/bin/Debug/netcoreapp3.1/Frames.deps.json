@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Frames/1.0.0": {
+        "dependencies": {
+          "Throws": "1.0.0"
+        },
+        "runtime": {
+          "Frames.dll": {}
+        }
+      },
+      "Throws/1.0.0": {
+        "runtime": {
+          "Throws.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Frames/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Throws/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

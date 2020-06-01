@@ -1,0 +1,17 @@
+/Users/irazozulya/Projects/cursach/cursach/bin/Debug/netcoreapp3.1/cursach.deps.json
+/Users/irazozulya/Projects/cursach/cursach/bin/Debug/netcoreapp3.1/cursach.runtimeconfig.json
+/Users/irazozulya/Projects/cursach/cursach/bin/Debug/netcoreapp3.1/cursach.runtimeconfig.dev.json
+/Users/irazozulya/Projects/cursach/cursach/bin/Debug/netcoreapp3.1/cursach.dll
+/Users/irazozulya/Projects/cursach/cursach/bin/Debug/netcoreapp3.1/cursach.pdb
+/Users/irazozulya/Projects/cursach/cursach/bin/Debug/netcoreapp3.1/BowlingLibrary.dll
+/Users/irazozulya/Projects/cursach/cursach/bin/Debug/netcoreapp3.1/BowlingLibrary.pdb
+/Users/irazozulya/Projects/cursach/cursach/obj/Debug/netcoreapp3.1/cursach.csprojAssemblyReference.cache
+/Users/irazozulya/Projects/cursach/cursach/obj/Debug/netcoreapp3.1/cursach.AssemblyInfoInputs.cache
+/Users/irazozulya/Projects/cursach/cursach/obj/Debug/netcoreapp3.1/cursach.AssemblyInfo.cs
+/Users/irazozulya/Projects/cursach/cursach/obj/Debug/netcoreapp3.1/cursach.csproj.CopyComplete
+/Users/irazozulya/Projects/cursach/cursach/obj/Debug/netcoreapp3.1/cursach.dll
+/Users/irazozulya/Projects/cursach/cursach/obj/Debug/netcoreapp3.1/cursach.pdb
+/Users/irazozulya/Projects/cursach/cursach/bin/Debug/netcoreapp3.1/Frames.dll
+/Users/irazozulya/Projects/cursach/cursach/bin/Debug/netcoreapp3.1/Throws.dll
+/Users/irazozulya/Projects/cursach/cursach/bin/Debug/netcoreapp3.1/Frames.pdb
+/Users/irazozulya/Projects/cursach/cursach/bin/Debug/netcoreapp3.1/Throws.pdb

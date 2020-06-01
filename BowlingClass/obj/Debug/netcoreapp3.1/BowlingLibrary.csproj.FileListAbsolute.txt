@@ -1,0 +1,13 @@
+/Users/irazozulya/Projects/cursach/BowlingClass/bin/Debug/netcoreapp3.1/BowlingLibrary.deps.json
+/Users/irazozulya/Projects/cursach/BowlingClass/bin/Debug/netcoreapp3.1/BowlingLibrary.dll
+/Users/irazozulya/Projects/cursach/BowlingClass/bin/Debug/netcoreapp3.1/BowlingLibrary.pdb
+/Users/irazozulya/Projects/cursach/BowlingClass/obj/Debug/netcoreapp3.1/BowlingLibrary.csprojAssemblyReference.cache
+/Users/irazozulya/Projects/cursach/BowlingClass/obj/Debug/netcoreapp3.1/BowlingLibrary.AssemblyInfoInputs.cache
+/Users/irazozulya/Projects/cursach/BowlingClass/obj/Debug/netcoreapp3.1/BowlingLibrary.AssemblyInfo.cs
+/Users/irazozulya/Projects/cursach/BowlingClass/obj/Debug/netcoreapp3.1/BowlingLibrary.dll
+/Users/irazozulya/Projects/cursach/BowlingClass/obj/Debug/netcoreapp3.1/BowlingLibrary.pdb
+/Users/irazozulya/Projects/cursach/BowlingClass/bin/Debug/netcoreapp3.1/Frames.dll
+/Users/irazozulya/Projects/cursach/BowlingClass/bin/Debug/netcoreapp3.1/Throws.dll
+/Users/irazozulya/Projects/cursach/BowlingClass/bin/Debug/netcoreapp3.1/Throws.pdb
+/Users/irazozulya/Projects/cursach/BowlingClass/bin/Debug/netcoreapp3.1/Frames.pdb
+/Users/irazozulya/Projects/cursach/BowlingClass/obj/Debug/netcoreapp3.1/BowlingLibrary.csproj.CopyComplete

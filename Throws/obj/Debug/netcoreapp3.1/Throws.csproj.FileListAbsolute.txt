@@ -1,0 +1,8 @@
+/Users/irazozulya/Projects/cursach/Throws/bin/Debug/netcoreapp3.1/Throws.deps.json
+/Users/irazozulya/Projects/cursach/Throws/bin/Debug/netcoreapp3.1/Throws.dll
+/Users/irazozulya/Projects/cursach/Throws/bin/Debug/netcoreapp3.1/Throws.pdb
+/Users/irazozulya/Projects/cursach/Throws/obj/Debug/netcoreapp3.1/Throws.AssemblyInfoInputs.cache
+/Users/irazozulya/Projects/cursach/Throws/obj/Debug/netcoreapp3.1/Throws.AssemblyInfo.cs
+/Users/irazozulya/Projects/cursach/Throws/obj/Debug/netcoreapp3.1/Throws.dll
+/Users/irazozulya/Projects/cursach/Throws/obj/Debug/netcoreapp3.1/Throws.pdb
+/Users/irazozulya/Projects/cursach/Throws/obj/Debug/netcoreapp3.1/Throws.csprojAssemblyReference.cache

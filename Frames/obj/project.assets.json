@@ -1,0 +1,86 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Throws/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/Throws.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Throws.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Throws/1.0.0": {
+      "type": "project",
+      "path": "../Throws/Throws.csproj",
+      "msbuildProject": "../Throws/Throws.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETCoreApp,Version=v3.1": [
+      "Throws >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "/Users/irazozulya/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/Users/irazozulya/Projects/cursach/Frames/Frames.csproj",
+      "projectName": "Frames",
+      "projectPath": "/Users/irazozulya/Projects/cursach/Frames/Frames.csproj",
+      "packagesPath": "/Users/irazozulya/.nuget/packages/",
+      "outputPath": "/Users/irazozulya/Projects/cursach/Frames/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/Users/irazozulya/.config/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "netcoreapp3.1"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "projectReferences": {
+            "/Users/irazozulya/Projects/cursach/Throws/Throws.csproj": {
+              "projectPath": "/Users/irazozulya/Projects/cursach/Throws/Throws.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "netcoreapp3.1": {
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.102/RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
