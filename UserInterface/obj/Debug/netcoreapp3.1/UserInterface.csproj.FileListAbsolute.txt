@@ -1,0 +1,15 @@
+/Users/irazozulya/Projects/cursach/UserInterface/obj/Debug/netcoreapp3.1/UserInterface.AssemblyInfoInputs.cache
+/Users/irazozulya/Projects/cursach/UserInterface/obj/Debug/netcoreapp3.1/UserInterface.AssemblyInfo.cs
+/Users/irazozulya/Projects/cursach/UserInterface/obj/Debug/netcoreapp3.1/UserInterface.csprojAssemblyReference.cache
+/Users/irazozulya/Projects/cursach/UserInterface/bin/Debug/netcoreapp3.1/UserInterface.deps.json
+/Users/irazozulya/Projects/cursach/UserInterface/bin/Debug/netcoreapp3.1/UserInterface.dll
+/Users/irazozulya/Projects/cursach/UserInterface/bin/Debug/netcoreapp3.1/UserInterface.pdb
+/Users/irazozulya/Projects/cursach/UserInterface/bin/Debug/netcoreapp3.1/BowlingLibrary.dll
+/Users/irazozulya/Projects/cursach/UserInterface/bin/Debug/netcoreapp3.1/Frames.dll
+/Users/irazozulya/Projects/cursach/UserInterface/bin/Debug/netcoreapp3.1/Throws.dll
+/Users/irazozulya/Projects/cursach/UserInterface/bin/Debug/netcoreapp3.1/BowlingLibrary.pdb
+/Users/irazozulya/Projects/cursach/UserInterface/bin/Debug/netcoreapp3.1/Frames.pdb
+/Users/irazozulya/Projects/cursach/UserInterface/bin/Debug/netcoreapp3.1/Throws.pdb
+/Users/irazozulya/Projects/cursach/UserInterface/obj/Debug/netcoreapp3.1/UserInterface.csproj.CopyComplete
+/Users/irazozulya/Projects/cursach/UserInterface/obj/Debug/netcoreapp3.1/UserInterface.dll
+/Users/irazozulya/Projects/cursach/UserInterface/obj/Debug/netcoreapp3.1/UserInterface.pdb

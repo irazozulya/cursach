@@ -38,21 +38,6 @@
         "runtime": {
           "bin/placeholder/Throws.dll": {}
         }
-      },
-      "UserInterface/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "BowlingLibrary": "1.0.0",
-          "Frames": "1.0.0",
-          "Throws": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/UserInterface.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/UserInterface.dll": {}
-        }
       }
     }
   },
@@ -71,19 +56,13 @@
       "type": "project",
       "path": "../Throws/Throws.csproj",
       "msbuildProject": "../Throws/Throws.csproj"
-    },
-    "UserInterface/1.0.0": {
-      "type": "project",
-      "path": "../UserInterface/UserInterface.csproj",
-      "msbuildProject": "../UserInterface/UserInterface.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "BowlingLibrary >= 1.0.0",
       "Frames >= 1.0.0",
-      "Throws >= 1.0.0",
-      "UserInterface >= 1.0.0"
+      "Throws >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -92,11 +71,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/irazozulya/Projects/cursach/cursach/cursach.csproj",
-      "projectName": "cursach",
-      "projectPath": "/Users/irazozulya/Projects/cursach/cursach/cursach.csproj",
+      "projectUniqueName": "/Users/irazozulya/Projects/cursach/UserInterface/UserInterface.csproj",
+      "projectName": "UserInterface",
+      "projectPath": "/Users/irazozulya/Projects/cursach/UserInterface/UserInterface.csproj",
       "packagesPath": "/Users/irazozulya/.nuget/packages/",
-      "outputPath": "/Users/irazozulya/Projects/cursach/cursach/obj/",
+      "outputPath": "/Users/irazozulya/Projects/cursach/UserInterface/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/irazozulya/.config/NuGet/NuGet.Config"
@@ -118,9 +97,6 @@
             },
             "/Users/irazozulya/Projects/cursach/Throws/Throws.csproj": {
               "projectPath": "/Users/irazozulya/Projects/cursach/Throws/Throws.csproj"
-            },
-            "/Users/irazozulya/Projects/cursach/UserInterface/UserInterface.csproj": {
-              "projectPath": "/Users/irazozulya/Projects/cursach/UserInterface/UserInterface.csproj"
             }
           }
         }

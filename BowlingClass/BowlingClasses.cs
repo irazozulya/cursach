@@ -7,12 +7,13 @@ namespace BowlingLibrary
 {
     public class Game
     {
-        protected int id;
         protected List<Player> players = new List<Player>();
 
-        public Game(int id)
+        public Game() { }
+
+        public List<Player> GetPlayerList()
         {
-            this.id = id;
+            return players;
         }
 
         public void AddPlayer(Player player)
@@ -27,7 +28,7 @@ namespace BowlingLibrary
 
         public void ShowTable()
         {
-            Console.WriteLine("{0, -3}| {1, -20}| {2, -4}| {3, -4}| {4, -4}| {5, -4}| {6, -4}| {7, -4}| {8, -4}| {9, -4}| {10, -4}| {11, -9}| {12, -10}", "ID", "Player", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Total score");
+            Console.WriteLine("{0, -3}| {1, -20}| {2, -4}| {3, -4}| {4, -4}| {5, -4}| {6, -4}| {7, -4}| {8, -4}| {9, -4}| {10, -4}| {11, -9}| {12, -10}| {13, -14}| {14, -11}", "ID", "Player", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Game score", "Previous score", "Total score");
             foreach (Player pl in players)
                 pl.ShowScore();
         }
@@ -35,28 +36,43 @@ namespace BowlingLibrary
 
     public class Player
     {
-        protected int id;
+        public static int lastId = 0;
+        public int id;
         public string name;
-        protected int previousScore;
+        public int previousScore;
+        protected int currentScore = 0;
         protected List<Frame> frames = new List<Frame>();
         protected LastFrame lastFrame;
 
-        public Player(string name, int id)
+        public Player() { }
+
+        public Player(string name)
         {
             this.name = name;
-            this.id = id;
+            lastId++;
+            id = lastId;
+            previousScore = 0;
         }
 
         public Player(string name, int previousScore, int id)
         {
             this.name = name;
             this.previousScore = previousScore;
+            if (lastId <= id)
+            {
+                lastId = id;
+            }
             this.id = id;
         }
 
         public int GetId()
         {
             return id;
+        }
+
+        public int GetTotalScore()
+        {
+            return previousScore + currentScore;
         }
 
         protected void ResetPrevious()
@@ -447,12 +463,8 @@ namespace BowlingLibrary
                     total += lastFrame.GetScore();
                 }
             }
-
-            Console.WriteLine(" {0}", total);
-
-            foreach (var i in frames)
-                Console.Write(i.GetScore() + " // ");
-            Console.WriteLine(lastFrame.GetScore());
+            currentScore = total;
+            Console.WriteLine(" {0, -10}| {1, -14}| {2, -11}", total, previousScore, total + previousScore);
         }
     }
 }

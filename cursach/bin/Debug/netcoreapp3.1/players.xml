@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<Players xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Player>
+    <id>1</id>
+    <name>Dimitrova</name>
+    <previousScore>0</previousScore>
+  </Player>
+  <Player>
+    <id>2</id>
+    <name>Hyrskyi</name>
+    <previousScore>0</previousScore>
+  </Player>
+  <Player>
+    <id>3</id>
+    <name>Zozulya</name>
+    <previousScore>276</previousScore>
+  </Player>
+  <Player>
+    <id>1</id>
+    <name>Zozulya</name>
+    <previousScore>276</previousScore>
+  </Player>
+</Players>

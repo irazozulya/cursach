@@ -15,3 +15,5 @@
 /Users/irazozulya/Projects/cursach/cursach/bin/Debug/netcoreapp3.1/Throws.dll
 /Users/irazozulya/Projects/cursach/cursach/bin/Debug/netcoreapp3.1/Frames.pdb
 /Users/irazozulya/Projects/cursach/cursach/bin/Debug/netcoreapp3.1/Throws.pdb
+/Users/irazozulya/Projects/cursach/cursach/bin/Debug/netcoreapp3.1/UserInterface.dll
+/Users/irazozulya/Projects/cursach/cursach/bin/Debug/netcoreapp3.1/UserInterface.pdb
