@@ -32,10 +32,19 @@ namespace cursach
                         players = (List<Player>)playersFormatter.Deserialize(fs);
                     }
 
+                    int maxId = Player.lastId;
+                    foreach (Player pl in players)
+                    {
+                        if(maxId < pl.id)
+                        {
+                            maxId = pl.id;
+                        }
+                    }
+                    Player.lastId = maxId;
+
                     Game gm = new Game();
                     foreach (Player pl in players)
                         gm.AddPlayer(pl);
-                    gm.ShowTable();
                     Interface inter = new Interface(gm);
                     inter.Interact();
                 }

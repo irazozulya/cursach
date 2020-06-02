@@ -21,9 +21,62 @@ namespace BowlingLibrary
             players.Add(player);
         }
 
-        public void RemovePlayer(Player player)
+        public void RemovePlayer(int playerID)
         {
-            players.Remove(player);
+            for (int i = 0; i < players.Count; i++)
+            {
+                if (players[i].id == playerID)
+                {
+                    players.Remove(players[i]);
+                }
+            }
+        }
+
+        public string GetName(int playerID)
+        {
+            return players[playerID].name;
+        }
+
+        public void AddFrame(int playerID, Frame frame)
+        {
+            players[playerID].AddFrame(frame);
+        }
+
+        public void AddLastFrame(int playerID, LastFrame frame)
+        {
+            players[playerID].AddFrame(frame);
+        }
+
+        public bool IsStrikeLastFrame(int playerID)
+        {
+            return players[playerID].IsStrikeLastFrame();
+        }
+
+        public bool IsStrikeLastFrameSecond(int playerID)
+        {
+            return players[playerID].IsStrikeLastFrameSecond();
+        }
+
+        public bool IsSpareLastFrame(int playerID)
+        {
+            return players[playerID].IsSpareLastFrame();
+        }
+
+        public void ResetSecondThrowLastFrame(int playerID, AbstractThrow tThrow)
+        {
+            players[playerID].ResetSecondThrow(tThrow);
+        }
+
+        public void SetThirdThrowLastFrame(int playerID, AbstractThrow tThrow)
+        {
+            players[playerID].SetThirdThrow(tThrow);
+        }
+
+        public void ShowPlayerList()
+        {
+            Console.WriteLine("{0, -3}| {1, -20}|", "ID", "Player");
+            foreach (Player pl in players)
+                Console.WriteLine("{0, -3}| {1, -20}|", pl.id, pl.name);
         }
 
         public void ShowTable()
@@ -43,6 +96,7 @@ namespace BowlingLibrary
         protected int currentScore = 0;
         protected List<Frame> frames = new List<Frame>();
         protected LastFrame lastFrame;
+        protected bool isLast = false;
 
         public Player() { }
 
@@ -124,6 +178,35 @@ namespace BowlingLibrary
             }
         }
 
+        public bool IsStrikeLastFrame()
+        {
+            return lastFrame.IsStrike();
+        }
+
+        public bool IsStrikeLastFrameSecond()
+        {
+            return lastFrame.IsStrikeSecond();
+        }
+
+        public bool IsSpareLastFrame()
+        {
+            return lastFrame.IsSpare();
+        }
+
+        public void ResetSecondThrow(AbstractThrow tThrow)
+        {
+            lastFrame.ResetSecondThrow(tThrow);
+            if (lastFrame.IsStrikeSecond())
+            {
+                frames[8].ResetScore(lastFrame.GetScoreSecond());
+            }
+        }
+
+        public void SetThirdThrow(AbstractThrow tThrow)
+        {
+            lastFrame.SetThirdThrow(tThrow);
+        }
+
         public void AddFrame(Frame frame)
         {
             if (frames.Count < 9)
@@ -138,6 +221,7 @@ namespace BowlingLibrary
             if (frames.Count == 9)
             {
                 lastFrame = frame;
+                isLast = true;
 
                 if (frames[8].IsSpare())
                 {
@@ -165,15 +249,6 @@ namespace BowlingLibrary
         {
             if (lastFrame.IsSpare())
             {
-                lastFrame.SetThirdThrow(thThrow);
-            }
-        }
-
-        public void SetThirdThrow(FirstThrow sThrow, AbstractThrow thThrow)
-        {
-            if (lastFrame.IsStrike())
-            {
-                lastFrame.ResetSecondThrow(sThrow);
                 lastFrame.SetThirdThrow(thThrow);
             }
         }
@@ -254,7 +329,7 @@ namespace BowlingLibrary
                 Console.Write("  |  |");
             }
 
-            if (frames.Count != 9)
+            if (frames.Count < 10 && !isLast)
             {
                 Console.Write("   |  |   |");
             }

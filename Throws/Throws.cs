@@ -3,7 +3,7 @@
     public abstract class AbstractThrow
     {
         protected int score = 0;
-        protected bool[] pins;
+        protected bool[] pins = new bool[10] { false, false, false, false, false, false, false, false, false, false };
 
         public virtual int GetScore()
         {
@@ -24,14 +24,21 @@
 
         public FirstThrow(int[] indexes)
         {
-            pins = new bool[10] { false, false, false, false, false, false, false, false, false, false };
+            int count = 0;
 
             foreach (int i in indexes)
             {
-                pins[i - 1] = true;
+                if (i > 0 && i < 11)
+                {
+                    if (pins[i - 1] == false)
+                    {
+                        pins[i - 1] = true;
+                        count++;
+                    }
+                }
             }
 
-            score = 10 - indexes.Length;
+            score = 10 - count;
         }
 
         public override bool IsSplit()
@@ -75,14 +82,23 @@
 
         public SecondThrow(int[] indexes, FirstThrow fThrow)
         {
-            pins = fThrow.GetPins();
+            bool [] fPins = fThrow.GetPins();
+
+            int count = 0;
 
             foreach (int i in indexes)
             {
-                pins[i - 1] = true;
+                if (i > 0 && i < 11)
+                {
+                    if (fPins[i - 1] == true)
+                    {
+                        pins[i - 1] = true;
+                        count++;
+                    }
+                }
             }
 
-            score = 10 - indexes.Length - fThrow.GetScore();
+            score = 10 - count - fThrow.GetScore();
         }
 
         public override bool IsSplit() { return false; }

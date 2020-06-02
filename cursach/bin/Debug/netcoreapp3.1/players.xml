@@ -3,21 +3,16 @@
   <Player>
     <id>1</id>
     <name>Dimitrova</name>
-    <previousScore>0</previousScore>
+    <previousScore>600</previousScore>
   </Player>
   <Player>
     <id>2</id>
     <name>Hyrskyi</name>
-    <previousScore>0</previousScore>
+    <previousScore>600</previousScore>
   </Player>
   <Player>
     <id>3</id>
     <name>Zozulya</name>
-    <previousScore>276</previousScore>
-  </Player>
-  <Player>
-    <id>1</id>
-    <name>Zozulya</name>
-    <previousScore>276</previousScore>
+    <previousScore>876</previousScore>
   </Player>
 </Players>
