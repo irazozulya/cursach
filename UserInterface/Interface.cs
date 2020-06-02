@@ -8,16 +8,16 @@ using Frames;
 
 namespace UserInterface
 {
-    public class Interface
+    public class Interface // Клас інтерфейсу
     {
         protected Game game;
 
-        public Interface(Game game)
+        public Interface(Game game) // Конструктор для партії із файлу
         {
             this.game = game;
         }
 
-        public Interface()
+        public Interface() // Конструктор для нової партії
         {
             game = new Game();
 
@@ -33,7 +33,7 @@ namespace UserInterface
             }
         }
 
-        protected int[] Read()
+        protected int[] Read() // Читання номерів кегель, що залишилися після кидка
         {
             string temp = Console.ReadLine();
             int[] indexes;
@@ -47,17 +47,14 @@ namespace UserInterface
                 indexes = new int[pins.Length];
                 for (int h = 0; h < pins.Length; h++)
                 {
-                    if (pins[h] != "" && !System.Text.RegularExpressions.Regex.IsMatch(pins[h], "^[a-zA-Z]+$"))
-                    {
-                        indexes[h] = Convert.ToInt32(pins[h]);
-                    }
+                    Int32.TryParse(pins[h], out indexes[h]);
                 }   
                 Array.Sort(indexes);
             }
             return indexes;
         }
 
-        public void Interact()
+        public void Interact() // Взаємодія із користувачем
         {
             bool played = false;
             bool end = true;
@@ -73,7 +70,7 @@ namespace UserInterface
                 Console.Write("Your choice: ");
                 string choice = Console.ReadLine();
                 Console.WriteLine("\n");
-                if (choice == "1")
+                if (choice == "1")// Гра
                 {
                     if (!played)
                     {
@@ -142,26 +139,47 @@ namespace UserInterface
                         game.ShowTable();
                     }
                 }
-                else if (choice == "2")
+                else if (choice == "2") // Додавання нового гравця
                 {
                     Console.WriteLine("Enter info about the player in this format:\nZozulya");
-                    string player = Console.ReadLine();
-                    game.AddPlayer(new Player(player));
-                    Console.WriteLine("\n");
-                    game.ShowPlayerList();
+                    try
+                    {
+                        string player = Console.ReadLine();
+                        game.AddPlayer(new Player(player));
+                    }
+                    catch (PlayerException ex)
+                    {
+                        CatchExcepts(ex);
+                    }
+                    finally
+                    {
+                        Console.WriteLine("\n");
+                        game.ShowPlayerList();
+                    }
                 }
-                else if (choice == "3")
+                else if (choice == "3") // Видалення гравця
                 {
-                    game.ShowPlayerList();
-                    Console.WriteLine("\nEnter the player's id in this format:\n3");
-                    game.RemovePlayer(Convert.ToInt32(Console.ReadLine()));
-                    game.ShowPlayerList();
+                    try
+                    {
+                        game.ShowPlayerList();
+                        Console.WriteLine("\nEnter the player's id in this format:\n3");
+                        game.RemovePlayer(Convert.ToInt32(Console.ReadLine()));
+                    }
+                    catch (FormatException ex)
+                    {
+                        CatchExcepts(ex);
+                    }
+                    finally
+                    {
+                        Console.WriteLine("\n");
+                        game.ShowPlayerList();
+                    }
                 }
-                else if (choice == "4")
+                else if (choice == "4") // Вивід таблиці результатів партії
                 {
                     game.ShowTable();
                 }
-                else if (choice == "5")
+                else if (choice == "5") // Запис результатів партії у файл players.xml
                 {
                     List<Player> players = game.GetPlayerList();
                     foreach (Player pl in players)
@@ -174,7 +192,7 @@ namespace UserInterface
                         playersFormatter.Serialize(fs, players);
                     }
                 }
-                else if (choice == "6")
+                else if (choice == "6") // Вихід
                 {
                     Console.WriteLine("Do you want to exit without saving?");
                     Console.Write("Press y/n: ");
@@ -187,6 +205,41 @@ namespace UserInterface
                 }
                 Console.WriteLine("\n\n");
             }
+        }
+
+        public void CatchExcepts(Exception ex) // Запис виключення до exceptions.xml
+        {
+            List<Except> excepts;
+
+            XmlSerializer exceptsFormatter = new XmlSerializer(typeof(List<Except>), new XmlRootAttribute("Exceptions"));
+
+            using (FileStream fs = new FileStream("exceptions.xml", FileMode.OpenOrCreate)) // Читання exceptions.xml
+            {
+                excepts = (List<Except>)exceptsFormatter.Deserialize(fs);
+            }
+
+            excepts.Add(new Except(ex.Message, Convert.ToString(ex.TargetSite), ex.StackTrace));
+
+            using (FileStream fs = new FileStream("exceptions.xml", FileMode.OpenOrCreate)) // Запис exceptions.xml
+            {
+                exceptsFormatter.Serialize(fs, excepts);
+            }
+        }
+    }
+
+    public class Except // Клас виключень
+    {
+        public string Message;
+        public string TargetSite;
+        public string StackTrace;
+
+        public Except() { }
+
+        public Except(string Message, string TargetSite, string StackTrace)
+        {
+            this.Message = Message;
+            this.TargetSite = TargetSite;
+            this.StackTrace = StackTrace;
         }
     }
 }

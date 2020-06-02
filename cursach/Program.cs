@@ -9,7 +9,7 @@ namespace cursach
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             bool end = true;
 
@@ -27,7 +27,7 @@ namespace cursach
 
                     List<Player> players;
 
-                    using (FileStream fs = new FileStream("players.xml", FileMode.OpenOrCreate))
+                    using (FileStream fs = new FileStream("players.xml", FileMode.OpenOrCreate)) // Читання players.xml
                     {
                         players = (List<Player>)playersFormatter.Deserialize(fs);
                     }
@@ -43,7 +43,7 @@ namespace cursach
                     Player.lastId = maxId;
 
                     Game gm = new Game();
-                    foreach (Player pl in players)
+                    foreach (Player pl in players) // Додавання гравців до партії
                         gm.AddPlayer(pl);
                     Interface inter = new Interface(gm);
                     inter.Interact();

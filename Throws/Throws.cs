@@ -1,28 +1,27 @@
 ﻿namespace Throws
 {
-    public abstract class AbstractThrow
+    public abstract class AbstractThrow // Абстрактний клас кидка
     {
-        protected int score = 0;
-        protected bool[] pins = new bool[10] { false, false, false, false, false, false, false, false, false, false };
+        protected int score = 0; // Очки за кидок
+        protected bool[] pins = new bool[10] { false, false, false, false, false, false, false, false, false, false }; // Масив кегель, що залишилися після кидка
 
-        public virtual int GetScore()
+        public virtual int GetScore() // Повернення результатів кидка
         {
             return score;
         }
 
-        public virtual bool[] GetPins()
+        public virtual bool[] GetPins() // Повернення масиву кегель, що залишилися після кидка
         {
             return pins;
         }
 
-        public abstract bool IsSplit();
-        public abstract bool IsStrike();
+        public abstract bool IsSplit(); // Перевірка чи є кидок сплітом
+        public abstract bool IsStrike(); // Перевірка чи є кидок страйком
     }
 
-    public class FirstThrow : AbstractThrow
+    public class FirstThrow : AbstractThrow // Клас першого кидка
     {
-
-        public FirstThrow(int[] indexes)
+        public FirstThrow(int[] indexes) // Конструктор
         {
             int count = 0;
 
@@ -41,7 +40,7 @@
             score = 10 - count;
         }
 
-        public override bool IsSplit()
+        public override bool IsSplit() // Перевірка чи є кидок сплітом
         {
             if (pins[0])
             {
@@ -67,7 +66,7 @@
             }
         }
 
-        public override bool IsStrike()
+        public override bool IsStrike() // Перевірка чи є кидок страйком
         {
             if (score == 10)
                 return true;
@@ -76,11 +75,9 @@
         }
     }
 
-    public class SecondThrow : AbstractThrow
+    public class SecondThrow : AbstractThrow // Клас другого кидка
     {
-        public SecondThrow() { }
-
-        public SecondThrow(int[] indexes, FirstThrow fThrow)
+        public SecondThrow(int[] indexes, FirstThrow fThrow) // Конструктор
         {
             bool [] fPins = fThrow.GetPins();
 
@@ -101,7 +98,7 @@
             score = 10 - count - fThrow.GetScore();
         }
 
-        public override bool IsSplit() { return false; }
-        public override bool IsStrike() { return false; }
+        public override bool IsSplit() { return false; } // Перевірка чи є кидок сплітом
+        public override bool IsStrike() { return false; } // Перевірка чи є кидок страйком
     }
 }

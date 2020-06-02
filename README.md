@@ -37,7 +37,9 @@ Throws.cs - file with classes for throw information;
 
 Frames.cs - file with classes for frame information. Frames include throws;
 
-BowlingClasses.cs - file with classes for game and player information. Game includes players; players include frames.
+BowlingClasses.cs - file with classes for game and player information and a custom PlayerException class. Game includes players; players include frames;
+
+Interface.cs - file with a class for UI and a class for saving exceptions.
 
 ## License
 

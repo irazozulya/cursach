@@ -5,23 +5,23 @@ using Frames;
 
 namespace BowlingLibrary
 {
-    public class Game
+    public class Game // Клас партії
     {
-        protected List<Player> players = new List<Player>();
+        protected List<Player> players = new List<Player>(); // Список гравців
 
         public Game() { }
 
-        public List<Player> GetPlayerList()
+        public List<Player> GetPlayerList() // Повернення списку гравців
         {
             return players;
         }
 
-        public void AddPlayer(Player player)
+        public void AddPlayer(Player player) // Додавання гравця
         {
             players.Add(player);
         }
 
-        public void RemovePlayer(int playerID)
+        public void RemovePlayer(int playerID) // Видалення гравця
         {
             for (int i = 0; i < players.Count; i++)
             {
@@ -32,54 +32,54 @@ namespace BowlingLibrary
             }
         }
 
-        public string GetName(int playerID)
+        public string GetName(int playerID) // Повернення ім'я гравця
         {
             return players[playerID].name;
         }
 
-        public void AddFrame(int playerID, Frame frame)
+        public void AddFrame(int playerID, Frame frame) // Додавання фрейму
         {
             players[playerID].AddFrame(frame);
         }
 
-        public void AddLastFrame(int playerID, LastFrame frame)
+        public void AddLastFrame(int playerID, LastFrame frame) // Додавання останнього фрейму
         {
             players[playerID].AddFrame(frame);
         }
 
-        public bool IsStrikeLastFrame(int playerID)
+        public bool IsStrikeLastFrame(int playerID) // Перевірка чи є страйком останній фрейм
         {
             return players[playerID].IsStrikeLastFrame();
         }
 
-        public bool IsStrikeLastFrameSecond(int playerID)
+        public bool IsStrikeLastFrameSecond(int playerID) // Перевірка чи є страйком другий кидок останнього фрейму
         {
             return players[playerID].IsStrikeLastFrameSecond();
         }
 
-        public bool IsSpareLastFrame(int playerID)
+        public bool IsSpareLastFrame(int playerID) // Перевірка чи є спеаром останній фрейм
         {
             return players[playerID].IsSpareLastFrame();
         }
 
-        public void ResetSecondThrowLastFrame(int playerID, AbstractThrow tThrow)
+        public void ResetSecondThrowLastFrame(int playerID, AbstractThrow tThrow) // Перезапис другого кидка останнього фрейму
         {
             players[playerID].ResetSecondThrow(tThrow);
         }
 
-        public void SetThirdThrowLastFrame(int playerID, AbstractThrow tThrow)
+        public void SetThirdThrowLastFrame(int playerID, AbstractThrow tThrow) // Запис третього кидка останнього фрейму
         {
             players[playerID].SetThirdThrow(tThrow);
         }
 
-        public void ShowPlayerList()
+        public void ShowPlayerList() // Виведення списку ID та імен гравців
         {
             Console.WriteLine("{0, -3}| {1, -20}|", "ID", "Player");
             foreach (Player pl in players)
                 Console.WriteLine("{0, -3}| {1, -20}|", pl.id, pl.name);
         }
 
-        public void ShowTable()
+        public void ShowTable() // Виведення таблиці результатів партії
         {
             Console.WriteLine("{0, -3}| {1, -20}| {2, -4}| {3, -4}| {4, -4}| {5, -4}| {6, -4}| {7, -4}| {8, -4}| {9, -4}| {10, -4}| {11, -9}| {12, -10}| {13, -14}| {14, -11}", "ID", "Player", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Game score", "Previous score", "Total score");
             foreach (Player pl in players)
@@ -87,49 +87,45 @@ namespace BowlingLibrary
         }
     }
 
-    public class Player
+    public class Player // Клас гравця
     {
-        public static int lastId = 0;
-        public int id;
-        public string name;
-        public int previousScore;
-        protected int currentScore = 0;
-        protected List<Frame> frames = new List<Frame>();
-        protected LastFrame lastFrame;
-        protected bool isLast = false;
+        public static int lastId = 0; // Найбільший ID серед усіх об'єктів класу
+        public int id; // ID гравця
+        public string name; // Ім'я гравця
+        public int previousScore; // Результат попередніх партій гравця
+        protected int currentScore = 0; // Результат поточної партії гравця
+        protected List<Frame> frames = new List<Frame>(); // Фрейми гравця
+        protected LastFrame lastFrame; // Останній фрейм гравця
+        protected bool isLast = false; // Чи відбувся останній фрейм
 
         public Player() { }
 
-        public Player(string name)
+        public Player(string name) // Констуктор
         {
-            this.name = name;
-            lastId++;
-            id = lastId;
-            previousScore = 0;
-        }
-
-        public Player(string name, int previousScore, int id)
-        {
-            this.name = name;
-            this.previousScore = previousScore;
-            if (lastId <= id)
+            if (!System.Text.RegularExpressions.Regex.IsMatch(name, "^[a-zA-Z]+$"))
             {
-                lastId = id;
+                throw new PlayerException("Name contains invalid symbols.");
             }
-            this.id = id;
+            else
+            {
+                this.name = name;
+                lastId++;
+                id = lastId;
+                previousScore = 0;
+            }
         }
 
-        public int GetId()
+        public int GetId() // Повернення ID
         {
             return id;
         }
 
-        public int GetTotalScore()
+        public int GetTotalScore() // Повернення загального рахунку
         {
             return previousScore + currentScore;
         }
 
-        protected void ResetPrevious()
+        protected void ResetPrevious() // Обрахунок очок за правилами боулінгу
         {
             int size = frames.Count;
             if (size == 2)
@@ -178,36 +174,36 @@ namespace BowlingLibrary
             }
         }
 
-        public bool IsStrikeLastFrame()
+        public bool IsStrikeLastFrame() // Перевірка чи є страйком останній фрейм
         {
             return lastFrame.IsStrike();
         }
 
-        public bool IsStrikeLastFrameSecond()
+        public bool IsStrikeLastFrameSecond() // Перевірка чи є страйком другий кидок останнього фрейму
         {
             return lastFrame.IsStrikeSecond();
         }
 
-        public bool IsSpareLastFrame()
+        public bool IsSpareLastFrame() // Перевірка чи є спеаром останній фрейм
         {
             return lastFrame.IsSpare();
         }
 
-        public void ResetSecondThrow(AbstractThrow tThrow)
+        public void ResetSecondThrow(AbstractThrow sThrow) //  Перезапис другого кидка останнього фрейму
         {
-            lastFrame.ResetSecondThrow(tThrow);
+            lastFrame.ResetSecondThrow(sThrow);
             if (lastFrame.IsStrikeSecond())
             {
                 frames[8].ResetScore(lastFrame.GetScoreSecond());
             }
         }
 
-        public void SetThirdThrow(AbstractThrow tThrow)
+        public void SetThirdThrow(AbstractThrow tThrow) // Запис третього кидка останнього фрейму
         {
             lastFrame.SetThirdThrow(tThrow);
         }
 
-        public void AddFrame(Frame frame)
+        public void AddFrame(Frame frame) // Додавання фрейму
         {
             if (frames.Count < 9)
             {
@@ -216,7 +212,7 @@ namespace BowlingLibrary
             }
         }
 
-        public void AddFrame(LastFrame frame)
+        public void AddFrame(LastFrame frame) // Додавання останнього фрейму
         {
             if (frames.Count == 9)
             {
@@ -245,15 +241,7 @@ namespace BowlingLibrary
             }
         }
 
-        public void SetThirdThrow(FirstThrow thThrow)
-        {
-            if (lastFrame.IsSpare())
-            {
-                lastFrame.SetThirdThrow(thThrow);
-            }
-        }
-
-        public void ShowScore()
+        public void ShowScore() // Виведення результатів гравця
         {
             int total = 0;
             Console.Write("{0, -3}| {1, -20}|", id, name);
@@ -541,5 +529,10 @@ namespace BowlingLibrary
             currentScore = total;
             Console.WriteLine(" {0, -10}| {1, -14}| {2, -11}", total, previousScore, total + previousScore);
         }
+    }
+
+    public class PlayerException : Exception // Клас виключення для імені гравця
+    {
+        public PlayerException(string message) : base(message) { }
     }
 }

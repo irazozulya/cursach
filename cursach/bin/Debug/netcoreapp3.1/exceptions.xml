@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<Exceptions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Except>
+    <Message>Input string was not in a correct format.</Message>
+    <TargetSite>Void ThrowOverflowOrFormatException(ParsingStatus, System.TypeCode)</TargetSite>
+    <StackTrace>   at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
+   at System.Number.ParseInt32(ReadOnlySpan`1 value, NumberStyles styles, NumberFormatInfo info)
+   at System.Convert.ToInt32(String value)
+   at UserInterface.Interface.Interact() in /Users/irazozulya/Projects/cursach/UserInterface/Interface.cs:line 166</StackTrace>
+  </Except>
+  <Except>
+    <Message>Input string was not in a correct format.</Message>
+    <TargetSite>Void ThrowOverflowOrFormatException(ParsingStatus, System.TypeCode)</TargetSite>
+    <StackTrace>   at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
+   at System.Number.ParseInt32(ReadOnlySpan`1 value, NumberStyles styles, NumberFormatInfo info)
+   at System.Convert.ToInt32(String value)
+   at UserInterface.Interface.Interact() in /Users/irazozulya/Projects/cursach/UserInterface/Interface.cs:line 166</StackTrace>
+  </Except>
+  <Except>
+    <Message>Input string was not in a correct format.</Message>
+    <TargetSite>Void ThrowOverflowOrFormatException(ParsingStatus, System.TypeCode)</TargetSite>
+    <StackTrace>   at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
+   at System.Number.ParseInt32(ReadOnlySpan`1 value, NumberStyles styles, NumberFormatInfo info)
+   at System.Convert.ToInt32(String value)
+   at UserInterface.Interface.Interact() in /Users/irazozulya/Projects/cursach/UserInterface/Interface.cs:line 166</StackTrace>
+  </Except>
+  <Except>
+    <Message>Name contains invalid symbols!</Message>
+    <TargetSite>Void .ctor(System.String)</TargetSite>
+    <StackTrace>   at BowlingLibrary.Player..ctor(String name) in /Users/irazozulya/Projects/cursach/BowlingClass/BowlingClasses.cs:line 110
+   at UserInterface.Interface.Interact() in /Users/irazozulya/Projects/cursach/UserInterface/Interface.cs:line 148</StackTrace>
+  </Except>
+  <Except>
+    <Message>Name contains invalid symbols.</Message>
+    <TargetSite>Void .ctor(System.String)</TargetSite>
+    <StackTrace>   at BowlingLibrary.Player..ctor(String name) in /Users/irazozulya/Projects/cursach/BowlingClass/BowlingClasses.cs:line 110
+   at UserInterface.Interface.Interact() in /Users/irazozulya/Projects/cursach/UserInterface/Interface.cs:line 148</StackTrace>
+  </Except>
+  <Except>
+    <Message>Name contains invalid symbols.</Message>
+    <TargetSite>Void .ctor(System.String)</TargetSite>
+    <StackTrace>   at BowlingLibrary.Player..ctor(String name) in /Users/irazozulya/Projects/cursach/BowlingClass/BowlingClasses.cs:line 110
+   at UserInterface.Interface.Interact() in /Users/irazozulya/Projects/cursach/UserInterface/Interface.cs:line 148</StackTrace>
+  </Except>
+  <Except>
+    <Message>Name contains invalid symbols.</Message>
+    <TargetSite>Void .ctor(System.String)</TargetSite>
+    <StackTrace>   at BowlingLibrary.Player..ctor(String name) in /Users/irazozulya/Projects/cursach/BowlingClass/BowlingClasses.cs:line 110
+   at UserInterface.Interface.Interact() in /Users/irazozulya/Projects/cursach/UserInterface/Interface.cs:line 148</StackTrace>
+  </Except>
+</Exceptions>
